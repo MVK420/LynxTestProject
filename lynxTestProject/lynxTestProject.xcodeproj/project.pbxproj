@@ -15,6 +15,7 @@
 		1B881919269749E3004EE8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B881917269749E3004EE8F1 /* LaunchScreen.storyboard */; };
 		1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88192226974D75004EE8F1 /* LoginViewController.swift */; };
 		1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88192426974D7E004EE8F1 /* RegisterViewController.swift */; };
+		2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		1B88191A269749E3004EE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B88192226974D75004EE8F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B88192426974D7E004EE8F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lynxTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.release.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.release.xcconfig"; sourceTree = "<group>"; };
+		80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.debug.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				1B88190B269749DE004EE8F1 /* lynxTestProject */,
 				1B88190A269749DE004EE8F1 /* Products */,
+				FA7DE8949E25AD36808CBD8B /* Pods */,
+				ABCF6C538D8F8663E273720C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +96,24 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		ABCF6C538D8F8663E273720C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA7DE8949E25AD36808CBD8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */,
+				4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B88191D269749E3004EE8F1 /* Build configuration list for PBXNativeTarget "lynxTestProject" */;
 			buildPhases = (
+				F186B461F2EBBDC54A4274DD /* [CP] Check Pods Manifest.lock */,
 				1B881905269749DE004EE8F1 /* Sources */,
 				1B881906269749DE004EE8F1 /* Frameworks */,
 				1B881907269749DE004EE8F1 /* Resources */,
+				4A2B94766851A13E96151592 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +180,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A2B94766851A13E96151592 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F186B461F2EBBDC54A4274DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lynxTestProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B881905269749DE004EE8F1 /* Sources */ = {
@@ -307,6 +376,7 @@
 		};
 		1B88191E269749E3004EE8F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,6 +396,7 @@
 		};
 		1B88191F269749E3004EE8F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

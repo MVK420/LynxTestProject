@@ -60,7 +60,7 @@
 		1B88190B269749DE004EE8F1 /* lynxTestProject */ = {
 			isa = PBXGroup;
 			children = (
-				1B88192126974C7D004EE8F1 /* Utils */,
+				1B881928269753FC004EE8F1 /* Utils */,
 				1B88192026974C4E004EE8F1 /* Views */,
 				1B88190C269749DE004EE8F1 /* AppDelegate.swift */,
 				1B88190E269749DE004EE8F1 /* SceneDelegate.swift */,
@@ -82,7 +82,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1B88192126974C7D004EE8F1 /* Utils */ = {
+		1B881928269753FC004EE8F1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 			);

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 enum RegisterError: String {
     case noEmail = "Please enter your email"
@@ -15,18 +16,29 @@ enum RegisterError: String {
     case noMatch = "Your passwords don't match"
     case alreadyUsed = "This email is already registered"
     case passwordShort = "This password is too short"
+    case termsNot = "Please accept our terms and conditions"
 }
 
 protocol RegisterDelegate {
     func signalError(error: RegisterError)
+    func login()
 }
 
 class RegisterManager {
     var delegate: RegisterDelegate?
     
-    func validateData(email: String, password: String, confirmPassword: String) -> Bool {
-        return checkEmail(email) &&
-            checkPasswords(password, confirmPassword)
+    func validateData(email: String, password: String, confirmPassword: String, termsAccepted: Bool) {
+        if checkEmail(email) && checkPasswords(password, confirmPassword) && checkTerms(termsAccepted) {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
+                    if errCode == .emailAlreadyInUse {
+                        self.delegate?.signalError(error: .alreadyUsed)
+                        return
+                    }
+                }
+                self.delegate?.login()
+            }
+        }
     }
     
     private func checkEmail(_ email: String) -> Bool {
@@ -34,7 +46,12 @@ class RegisterManager {
             delegate?.signalError(error: RegisterError.noEmail)
             return false
         }
-        else if checkEmailInDb(email) {
+        return true
+    }
+    
+    private func checkTerms(_ accepted: Bool) -> Bool {
+        if !accepted {
+            delegate?.signalError(error: RegisterError.termsNot)
             return false
         }
         return true
@@ -58,9 +75,5 @@ class RegisterManager {
             return false
         }
         return true
-    }
-    
-    private func checkEmailInDb(_ email: String) -> Bool {
-        return false
     }
 }

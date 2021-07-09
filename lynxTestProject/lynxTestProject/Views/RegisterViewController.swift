@@ -31,6 +31,12 @@ class RegisterViewController: UIViewController, RegisterDelegate {
         registerManager.delegate = self
     }
     
+    func login() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "History")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
     func signalError(error: RegisterError) {
         print(error)
         let alert = UIAlertController(title: "Attention", message: error.rawValue, preferredStyle: UIAlertController.Style.alert)
@@ -40,10 +46,6 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     
     private func onPressedSignupButton() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let confirm = confirmTextField.text else { return }
-        if registerManager.validateData(email: email, password: password, confirmPassword: confirm) && termsSwitch.isOn {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(identifier: "History")
-            self.present(viewController, animated: true, completion: nil)
-        }
+        registerManager.validateData(email: email, password: password, confirmPassword: confirm, termsAccepted: termsSwitch.isOn)
     }
 }

@@ -44,7 +44,7 @@
         <!--Register-->
         <scene sceneID="dVz-As-2Ae">
             <objects>
-                <viewController storyboardIdentifier="Register" title="Register" modalPresentationStyle="overFullScreen" id="Qfx-Ac-WLU" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" title="Register" modalPresentationStyle="overFullScreen" id="Qfx-Ac-WLU" customClass="RegisterViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vpq-F6-c9K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,11 +104,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="conditionsSwitch" destination="v2Z-4F-zVw" id="5Yf-ZW-MKf"/>
-                        <outlet property="confirmTextField" destination="dHl-8t-NDh" id="osf-ZK-9jf"/>
-                        <outlet property="emailTextField" destination="epT-kW-7yp" id="Kqt-ff-jWk"/>
-                        <outlet property="passwordTextField" destination="cz8-KI-01x" id="03C-WI-F2v"/>
-                        <outlet property="signupButton" destination="Mtf-he-EK1" id="4ih-Wf-mtU"/>
+                        <outlet property="confirmTextField" destination="dHl-8t-NDh" id="Icj-aQ-uSd"/>
+                        <outlet property="emailTextField" destination="epT-kW-7yp" id="EAR-iG-L98"/>
+                        <outlet property="passwordTextField" destination="cz8-KI-01x" id="vna-Of-f2E"/>
+                        <outlet property="signupButton" destination="Mtf-he-EK1" id="JXA-wZ-YeL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-JG-61s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

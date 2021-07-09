@@ -20,6 +20,7 @@
 		1B88193426984387004EE8F1 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193326984387004EE8F1 /* HistoryCell.swift */; };
 		1B88193726984655004EE8F1 /* WorkoutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */; };
 		1B88193926984BDF004EE8F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B88193826984BDF004EE8F1 /* GoogleService-Info.plist */; };
+		1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193B26984E09004EE8F1 /* RegisterManager.swift */; };
 		2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		1B88193326984387004EE8F1 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellViewModel.swift; sourceTree = "<group>"; };
 		1B88193826984BDF004EE8F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B88193B26984E09004EE8F1 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
 		3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lynxTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.release.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.debug.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,9 +79,9 @@
 		1B88190B269749DE004EE8F1 /* lynxTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				1B88193A26984DEC004EE8F1 /* Utils */,
 				1B8819352698463E004EE8F1 /* ViewModels */,
 				1B88193026983D5A004EE8F1 /* Models */,
-				1B881928269753FC004EE8F1 /* Utils */,
 				1B88192026974C4E004EE8F1 /* Views */,
 				1B88190C269749DE004EE8F1 /* AppDelegate.swift */,
 				1B88190E269749DE004EE8F1 /* SceneDelegate.swift */,
@@ -104,13 +106,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1B881928269753FC004EE8F1 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		1B88193026983D5A004EE8F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +120,14 @@
 				1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1B88193A26984DEC004EE8F1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B88193B26984E09004EE8F1 /* RegisterManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		ABCF6C538D8F8663E273720C /* Frameworks */ = {
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */,
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,
 				1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */,
 				1B88193226983D67004EE8F1 /* Workout.swift in Sources */,

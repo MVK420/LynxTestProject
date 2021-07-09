@@ -29,7 +29,7 @@ class SplashViewController: UIViewController {
     }
     
     private func checkIfUserLoggedIn() -> Bool {
-        return true
+        return false
     }
 }
 

@@ -108,6 +108,7 @@
                         <outlet property="emailTextField" destination="epT-kW-7yp" id="EAR-iG-L98"/>
                         <outlet property="passwordTextField" destination="cz8-KI-01x" id="vna-Of-f2E"/>
                         <outlet property="signupButton" destination="Mtf-he-EK1" id="JXA-wZ-YeL"/>
+                        <outlet property="termsSwitch" destination="v2Z-4F-zVw" id="LPa-Ze-Raz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-JG-61s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

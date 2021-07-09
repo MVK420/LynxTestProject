@@ -11,11 +11,10 @@ import RxSwift
 import RxCocoa
 
 class RegisterViewController: UIViewController, RegisterDelegate {
-    
-    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var termsSwitch: UISwitch!
     @IBOutlet weak var signupButton: UIButton! {
         didSet {
             self.signupButton.rx.tap.bind { [weak self] in
@@ -32,15 +31,19 @@ class RegisterViewController: UIViewController, RegisterDelegate {
         registerManager.delegate = self
     }
     
-    func signalError(error: String) {
+    func signalError(error: RegisterError) {
         print(error)
-        let alert = UIAlertController(title: "Attention", message: error, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Attention", message: error.rawValue, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     private func onPressedSignupButton() {
         guard let email = emailTextField.text, let password = passwordTextField.text, let confirm = confirmTextField.text else { return }
-        registerManager.validateData(email: email, password: password, confirmPassword: confirm)
+        if registerManager.validateData(email: email, password: password, confirmPassword: confirm) && termsSwitch.isOn {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(identifier: "History")
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
 }

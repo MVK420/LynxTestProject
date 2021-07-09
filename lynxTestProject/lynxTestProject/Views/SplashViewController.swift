@@ -9,7 +9,7 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

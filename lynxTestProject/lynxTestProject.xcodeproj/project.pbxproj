@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		1B881919269749E3004EE8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B881917269749E3004EE8F1 /* LaunchScreen.storyboard */; };
 		1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88192226974D75004EE8F1 /* LoginViewController.swift */; };
 		1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88192426974D7E004EE8F1 /* RegisterViewController.swift */; };
+		1B88192F26983C7E004EE8F1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88192E26983C7D004EE8F1 /* HistoryViewController.swift */; };
+		1B88193226983D67004EE8F1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193126983D67004EE8F1 /* Workout.swift */; };
 		2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		1B88191A269749E3004EE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B88192226974D75004EE8F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B88192426974D7E004EE8F1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1B88192E26983C7D004EE8F1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		1B88193126983D67004EE8F1 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lynxTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.release.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.debug.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		1B88190B269749DE004EE8F1 /* lynxTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				1B88193026983D5A004EE8F1 /* Models */,
 				1B881928269753FC004EE8F1 /* Utils */,
 				1B88192026974C4E004EE8F1 /* Views */,
 				1B88190C269749DE004EE8F1 /* AppDelegate.swift */,
@@ -85,6 +90,7 @@
 				1B881910269749DE004EE8F1 /* SplashViewController.swift */,
 				1B88192226974D75004EE8F1 /* LoginViewController.swift */,
 				1B88192426974D7E004EE8F1 /* RegisterViewController.swift */,
+				1B88192E26983C7D004EE8F1 /* HistoryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,6 +100,14 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1B88193026983D5A004EE8F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B88193126983D67004EE8F1 /* Workout.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ABCF6C538D8F8663E273720C /* Frameworks */ = {
@@ -110,7 +124,6 @@
 				80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */,
 				4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -230,7 +243,9 @@
 			files = (
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,
 				1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */,
+				1B88193226983D67004EE8F1 /* Workout.swift in Sources */,
 				1B881911269749DE004EE8F1 /* SplashViewController.swift in Sources */,
+				1B88192F26983C7E004EE8F1 /* HistoryViewController.swift in Sources */,
 				1B88190D269749DE004EE8F1 /* AppDelegate.swift in Sources */,
 				1B88190F269749DE004EE8F1 /* SceneDelegate.swift in Sources */,
 			);

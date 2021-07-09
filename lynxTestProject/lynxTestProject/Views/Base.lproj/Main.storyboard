@@ -176,17 +176,39 @@
         <!--History-->
         <scene sceneID="nY6-5Y-ckM">
             <objects>
-                <viewController storyboardIdentifier="History" title="History" modalPresentationStyle="overFullScreen" id="hhk-RF-Xeh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="History" title="History" modalPresentationStyle="overFullScreen" id="hhk-RF-Xeh" customClass="HistoryViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sfd-oS-aNd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1L1-sY-JR5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-nh-v3h">
+                                <rect key="frame" x="285" y="802" width="89" height="30"/>
+                                <state key="normal" title="Add Workout"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YOa-I3-hnP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1L1-sY-JR5" firstAttribute="top" secondItem="YOa-I3-hnP" secondAttribute="top" id="ASf-if-WUg"/>
+                            <constraint firstItem="ct9-nh-v3h" firstAttribute="top" secondItem="1L1-sY-JR5" secondAttribute="bottom" constant="20" id="Mb5-bZ-qC7"/>
+                            <constraint firstItem="YOa-I3-hnP" firstAttribute="trailing" secondItem="1L1-sY-JR5" secondAttribute="trailing" id="OTA-ud-Hpx"/>
+                            <constraint firstItem="YOa-I3-hnP" firstAttribute="trailing" secondItem="ct9-nh-v3h" secondAttribute="trailing" constant="40" id="WCp-z6-rI7"/>
+                            <constraint firstItem="YOa-I3-hnP" firstAttribute="bottom" secondItem="ct9-nh-v3h" secondAttribute="bottom" constant="30" id="c4e-hw-Pzs"/>
+                            <constraint firstItem="1L1-sY-JR5" firstAttribute="leading" secondItem="YOa-I3-hnP" secondAttribute="leading" id="gtX-Hr-gmh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addWorkoutButton" destination="ct9-nh-v3h" id="0Po-D1-vrW"/>
+                        <outlet property="workoutTableView" destination="1L1-sY-JR5" id="iXx-Ln-5LU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xX-Yy-gK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="80"/>
+            <point key="canvasLocation" x="2708.6956521739135" y="79.6875"/>
         </scene>
     </scenes>
     <resources>

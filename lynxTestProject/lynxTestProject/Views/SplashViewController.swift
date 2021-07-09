@@ -14,10 +14,9 @@ class SplashViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.finishedLoading()
         }
-        // Do any additional setup after loading the view.
     }
     
     private func loadData() { }

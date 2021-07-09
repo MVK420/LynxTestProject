@@ -23,6 +23,7 @@
 		1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193B26984E09004EE8F1 /* RegisterManager.swift */; };
 		1B88193E26987676004EE8F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193D26987675004EE8F1 /* BaseViewController.swift */; };
 		1B881940269877B3004EE8F1 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193F269877B3004EE8F1 /* LoginManager.swift */; };
+		1B8819422698C1DC004EE8F1 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8819412698C1DC004EE8F1 /* ViewControllers.swift */; };
 		2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		1B88193B26984E09004EE8F1 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
 		1B88193D26987675004EE8F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B88193F269877B3004EE8F1 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		1B8819412698C1DC004EE8F1 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lynxTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.release.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.debug.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				1B88193B26984E09004EE8F1 /* RegisterManager.swift */,
 				1B88193F269877B3004EE8F1 /* LoginManager.swift */,
+				1B8819412698C1DC004EE8F1 /* ViewControllers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,
 				1B88193E26987676004EE8F1 /* BaseViewController.swift in Sources */,
 				1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */,
+				1B8819422698C1DC004EE8F1 /* ViewControllers.swift in Sources */,
 				1B88193226983D67004EE8F1 /* Workout.swift in Sources */,
 				1B881940269877B3004EE8F1 /* LoginManager.swift in Sources */,
 				1B881911269749DE004EE8F1 /* SplashViewController.swift in Sources */,

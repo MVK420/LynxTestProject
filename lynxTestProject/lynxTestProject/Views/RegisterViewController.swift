@@ -32,7 +32,7 @@ class RegisterViewController: BaseViewController, RegisterDelegate {
     }
     
     func login() {
-        presentViewController(with: "History")
+        presentViewController(with: ViewControllers.history.rawValue)
     }
     
     func signalError(error: RegisterError) {

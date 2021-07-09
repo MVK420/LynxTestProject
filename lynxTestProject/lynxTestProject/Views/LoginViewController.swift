@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController {
-    
+class LoginViewController: BaseViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton! {
@@ -22,16 +21,17 @@ class LoginViewController: UIViewController {
             }.disposed(by: disposeBag)
         }
     }
-    @IBOutlet weak var registerButton: UIButton!
-    private let disposeBag: DisposeBag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var registerButton: UIButton! {
+        didSet {
+            self.registerButton.rx.tap.bind { [weak self] in
+                guard let self = self else { return }
+                self.presentViewController(with: "Register")
+            }.disposed(by: disposeBag)
+        }
     }
-    
+    private let disposeBag: DisposeBag = DisposeBag()
+
     private func onPressedLoginButton() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "History")
-        self.present(viewController, animated: true, completion: nil)
+        self.presentViewController(with: "History")
     }
 }

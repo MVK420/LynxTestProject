@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RegisterViewController: UIViewController, RegisterDelegate {
+class RegisterViewController: BaseViewController, RegisterDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -32,9 +32,7 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     }
     
     func login() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "History")
-        self.present(viewController, animated: true, completion: nil)
+        presentViewController(with: "History")
     }
     
     func signalError(error: RegisterError) {

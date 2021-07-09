@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
 
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
@@ -22,14 +22,12 @@ class SplashViewController: UIViewController {
     
     private func loadData() { }
     private func finishedLoading() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewControllerID = checkIfUserLoggedIn() ? "Login": "Register"
-        let viewController = storyboard.instantiateViewController(identifier: viewControllerID)
-        self.present(viewController, animated: true, completion: nil)
+        presentViewController(with: viewControllerID)
     }
     
     private func checkIfUserLoggedIn() -> Bool {
-        return false
+        return true
     }
 }
 

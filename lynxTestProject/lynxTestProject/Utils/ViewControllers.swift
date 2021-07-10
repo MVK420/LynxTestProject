@@ -11,4 +11,6 @@ enum ViewControllers: String {
     case login = "Login"
     case register = "Register"
     case history = "History"
+    case addWorkout = "AddWorkout"
+    case camera = "Camera"
 }

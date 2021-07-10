@@ -10,10 +10,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: BaseViewController {
     
     @IBOutlet private weak var workoutTableView: UITableView!
-    @IBOutlet private weak var addWorkoutButton: UIButton!
+    @IBOutlet private weak var addWorkoutButton: UIButton! {
+        didSet {
+            addWorkoutButton.rx.tap.bind{ [weak self] in
+                guard let self = self else { return }
+                self.presentViewController(with: ViewControllers.addWorkout.rawValue)
+            }.disposed(by: disposeBag)
+        }
+    }
     private let disposeBag: DisposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()

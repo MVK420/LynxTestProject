@@ -38,7 +38,6 @@ class LoginViewController: BaseViewController, LoginDelegate {
     }
 
     private func onPressedLoginButton() {
-        // self.presentViewController(with: "History")
         if let email = nameTextField.text, let password = passwordTextField.text {
             loginManager.login(email: email, password: password)
         }

@@ -36,6 +36,7 @@ class RegisterManager {
                         return
                     }
                 }
+                User.email = email
                 self.delegate?.login()
             }
         }

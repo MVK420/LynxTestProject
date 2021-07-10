@@ -38,7 +38,15 @@ class LoginManager {
                     return
                 }
             }
+            self.save(email: email, password: password)
+            User.email = email
             self.delegate?.login()
         }
+    }
+    
+    private func save(email: String, password: String) {
+        let defaults = UserDefaults.standard
+        defaults.setValue(email, forKey: "email")
+        defaults.setValue(password, forKey: "password")
     }
 }

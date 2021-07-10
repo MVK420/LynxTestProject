@@ -27,6 +27,7 @@
 		1B8819442698C653004EE8F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8819432698C653004EE8F1 /* User.swift */; };
 		1BBC57C726999A0D005F0FA2 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC57C626999A0D005F0FA2 /* AddWorkoutViewController.swift */; };
 		1BBC57C926999F8E005F0FA2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC57C826999F8E005F0FA2 /* CameraViewController.swift */; };
+		1BBC57CB2699A181005F0FA2 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC57CA2699A181005F0FA2 /* FrameExtractor.swift */; };
 		2B548FDBC1DE9B0B336353C4 /* Pods_lynxTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1B8819432698C653004EE8F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1BBC57C626999A0D005F0FA2 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
 		1BBC57C826999F8E005F0FA2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1BBC57CA2699A181005F0FA2 /* FrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 		3676B9E925F4D349741C53E4 /* Pods_lynxTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lynxTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B01FECAEBE1C2DDE0A9DB33 /* Pods-lynxTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.release.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		80FF7A67884E2765C7CC6C03 /* Pods-lynxTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lynxTestProject.debug.xcconfig"; path = "Target Support Files/Pods-lynxTestProject/Pods-lynxTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				1B88193F269877B3004EE8F1 /* LoginManager.swift */,
 				1B8819412698C1DC004EE8F1 /* ViewControllers.swift */,
 				1B8819432698C653004EE8F1 /* User.swift */,
+				1BBC57CA2699A181005F0FA2 /* FrameExtractor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBC57CB2699A181005F0FA2 /* FrameExtractor.swift in Sources */,
 				1BBC57C726999A0D005F0FA2 /* AddWorkoutViewController.swift in Sources */,
 				1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */,
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,

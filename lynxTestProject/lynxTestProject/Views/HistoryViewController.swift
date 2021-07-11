@@ -26,7 +26,7 @@ class HistoryViewController: BaseViewController {
         super.viewDidLoad()
         bindTableView()
     }
-    let items = BehaviorRelay<[Workout]>(value: [Workout(name: "Alma", date: Date(timeIntervalSinceNow: 1), burnedCalories: 200, duration: 60, imageURL: "")])
+    let items = BehaviorRelay<[Workout]>(value: [Workout(name: "Alma", date: Date(timeIntervalSinceNow: 1), burnedCalories: "200", duration: "60", imageURL: "")])
     
     private func bindTableView() {
         items.bind(to: self.workoutTableView.rx.items(cellIdentifier: HistoryCell.Constants.cellID, cellType: HistoryCell.self)) { (tv, item, cell) in

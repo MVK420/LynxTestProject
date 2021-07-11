@@ -28,7 +28,10 @@ class LoginManager {
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
+            if let auth = authResult {
+                User.uid = auth.user.uid
+            }
+            else if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
                 switch errCode {
                 case .wrongPassword:
                     self.delegate?.signalError(.wrongPassword)

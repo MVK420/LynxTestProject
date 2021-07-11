@@ -30,7 +30,10 @@ class RegisterManager {
     func validateData(email: String, password: String, confirmPassword: String, termsAccepted: Bool) {
         if checkEmail(email) && checkPasswords(password, confirmPassword) && checkTerms(termsAccepted) {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
+                if let auth = authResult {
+                    User.uid = auth.user.uid
+                }
+                else if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
                     if errCode == .emailAlreadyInUse {
                         self.delegate?.signalError(error: .alreadyUsed)
                         return

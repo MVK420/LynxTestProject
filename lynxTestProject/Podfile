@@ -11,4 +11,5 @@ target 'lynxTestProject' do
   pod 'RxCocoa'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

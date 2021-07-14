@@ -35,6 +35,8 @@
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="EW8-LK-dly" id="SvT-g7-xEF"/>
+                        <segue destination="aSj-Td-yq5" kind="showDetail" identifier="splashToHistory" id="kmz-dB-8FB"/>
+                        <segue destination="zK7-wb-GeN" kind="push" identifier="toLoginSegue" id="TBS-I9-r4W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,12 +105,14 @@
                             <constraint firstItem="cz8-KI-01x" firstAttribute="trailing" secondItem="epT-kW-7yp" secondAttribute="trailing" id="uH0-85-sc4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5dv-ps-HJe"/>
                     <connections>
                         <outlet property="confirmTextField" destination="dHl-8t-NDh" id="Icj-aQ-uSd"/>
                         <outlet property="emailTextField" destination="epT-kW-7yp" id="EAR-iG-L98"/>
                         <outlet property="passwordTextField" destination="cz8-KI-01x" id="vna-Of-f2E"/>
                         <outlet property="signupButton" destination="Mtf-he-EK1" id="JXA-wZ-YeL"/>
                         <outlet property="termsSwitch" destination="v2Z-4F-zVw" id="LPa-Ze-Raz"/>
+                        <segue destination="aSj-Td-yq5" kind="showDetail" identifier="registerToHistory" id="puo-7k-tkp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzD-JG-61s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -162,11 +166,14 @@
                             <constraint firstItem="6gX-8w-6Pj" firstAttribute="centerX" secondItem="Abb-vZ-c2M" secondAttribute="centerX" id="puy-yo-ric"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ANm-qm-yyp"/>
                     <connections>
                         <outlet property="loginButton" destination="wuj-3e-wdI" id="qBg-lb-bub"/>
                         <outlet property="nameTextField" destination="LIX-zp-F7j" id="Q0g-Fr-aqW"/>
                         <outlet property="passwordTextField" destination="mH7-hr-gBc" id="RiO-Ay-o5h"/>
                         <outlet property="registerButton" destination="tVJ-EZ-NFq" id="bD7-4y-TcS"/>
+                        <segue destination="aSj-Td-yq5" kind="showDetail" identifier="loginToHistory" id="hG1-U6-eGf"/>
+                        <segue destination="Qfx-Ac-WLU" kind="push" identifier="toRegisterSegue" id="yIK-sX-T3W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMx-1f-aIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,11 +185,11 @@
             <objects>
                 <viewController storyboardIdentifier="History" title="History" modalPresentationStyle="overFullScreen" id="hhk-RF-Xeh" customClass="HistoryViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sfd-oS-aNd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1L1-sY-JR5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCellID" rowHeight="168" id="Kjr-dm-mbP" customClass="HistoryCell" customModule="lynxTestProject" customModuleProvider="target">
@@ -230,7 +237,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct9-nh-v3h">
-                                <rect key="frame" x="285" y="802" width="89" height="30"/>
+                                <rect key="frame" x="285" y="748" width="89" height="30"/>
                                 <state key="normal" title="Add Workout"/>
                             </button>
                         </subviews>
@@ -245,73 +252,140 @@
                             <constraint firstItem="1L1-sY-JR5" firstAttribute="leading" secondItem="YOa-I3-hnP" secondAttribute="leading" id="gtX-Hr-gmh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PGF-uD-stQ"/>
                     <connections>
                         <outlet property="addWorkoutButton" destination="ct9-nh-v3h" id="0Po-D1-vrW"/>
                         <outlet property="workoutTableView" destination="1L1-sY-JR5" id="iXx-Ln-5LU"/>
+                        <segue destination="7Qn-nz-Moi" kind="push" identifier="toDetailSegue" id="lpT-R1-eK6"/>
+                        <segue destination="He1-hg-xml" kind="push" identifier="toAddSegue" id="IUa-EO-r7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xX-Yy-gK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2708.6956521739135" y="79.6875"/>
+            <point key="canvasLocation" x="3618.840579710145" y="79.6875"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="FnD-6m-QxL">
+            <objects>
+                <viewController storyboardIdentifier="Detail" title="Detail" modalPresentationStyle="overFullScreen" id="7Qn-nz-Moi" customClass="DetailViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o9R-BH-okL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cnw-bb-awb">
+                                <rect key="frame" x="174" y="56" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ZeB-MP-P4X"/>
+                                    <constraint firstAttribute="width" secondItem="cnw-bb-awb" secondAttribute="height" multiplier="15:8" id="jtA-iv-hSy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt3-vH-Dd1">
+                                <rect key="frame" x="20" y="105" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Au-Jz-QhR">
+                                <rect key="frame" x="31" y="182" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-k3-MpY">
+                                <rect key="frame" x="21" y="246" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-D5-SeL">
+                                <rect key="frame" x="31" y="296" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tb3-w4-dsa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cnw-bb-awb" firstAttribute="top" secondItem="Tb3-w4-dsa" secondAttribute="top" id="JHW-AQ-Tt3"/>
+                            <constraint firstItem="Tb3-w4-dsa" firstAttribute="trailing" secondItem="cnw-bb-awb" secondAttribute="trailing" id="gSI-6w-grc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FRV-fJ-nvK"/>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="B0j-k3-MpY" id="3Cr-FX-kQM"/>
+                        <outlet property="dateLabel" destination="7Au-Jz-QhR" id="1WM-KL-c4c"/>
+                        <outlet property="durationLabel" destination="Dsz-D5-SeL" id="b8A-Rq-9ae"/>
+                        <outlet property="nameLabel" destination="dt3-vH-Dd1" id="YPE-N3-xDV"/>
+                        <outlet property="workoutImageView" destination="cnw-bb-awb" id="Lf2-we-qu0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j70-SF-cK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4576.811594202899" y="353.57142857142856"/>
         </scene>
         <!--AddWorkout-->
         <scene sceneID="5T9-X7-JTi">
             <objects>
                 <viewController storyboardIdentifier="AddWorkout" title="AddWorkout" modalPresentationStyle="overFullScreen" id="He1-hg-xml" customClass="AddWorkoutViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I4z-Dm-i5P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT7-SB-cOt">
-                                <rect key="frame" x="142.5" y="64" width="129" height="27"/>
+                                <rect key="frame" x="142.5" y="76" width="129" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Workout Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-dd-eq5">
-                                <rect key="frame" x="20" y="133" width="124" height="34"/>
+                                <rect key="frame" x="20" y="145" width="124" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Burned Calories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytK-Hf-Ze7">
-                                <rect key="frame" x="20" y="193" width="131" height="34"/>
+                                <rect key="frame" x="20" y="205" width="131" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b3L-BE-UDs">
-                                <rect key="frame" x="0.0" y="275" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="216"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lc-Zm-1IY">
-                                <rect key="frame" x="20" y="240" width="122" height="21"/>
+                                <rect key="frame" x="20" y="252" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duration of workout" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0j-6t-HYq">
-                                <rect key="frame" x="20" y="511" width="156" height="34"/>
+                                <rect key="frame" x="20" y="523" width="156" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rs8-Lr-BDl">
-                                <rect key="frame" x="157.5" y="588" width="99" height="21"/>
+                                <rect key="frame" x="157.5" y="600" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-cS-AFU">
-                                <rect key="frame" x="105" y="639" width="54" height="30"/>
+                                <rect key="frame" x="105" y="651" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plq-ft-SSS">
-                                <rect key="frame" x="258" y="639" width="48" height="30"/>
+                                <rect key="frame" x="258" y="651" width="48" height="30"/>
                                 <state key="normal" title="Gallery"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-8J-ViA">
-                                <rect key="frame" x="184" y="792" width="46" height="30"/>
+                                <rect key="frame" x="184" y="738" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YyC-nM-yns">
-                                <rect key="frame" x="258" y="133" width="130" height="132"/>
+                                <rect key="frame" x="258" y="145" width="130" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="phP-dL-n7V"/>
                                     <constraint firstAttribute="width" secondItem="YyC-nM-yns" secondAttribute="height" multiplier="65:66" id="s8U-GT-Gbq"/>
@@ -346,6 +420,7 @@
                             <constraint firstItem="EgY-dd-eq5" firstAttribute="top" secondItem="iT7-SB-cOt" secondAttribute="bottom" constant="42" id="wFB-hQ-EBy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="A4f-CT-TLj"/>
                     <connections>
                         <outlet property="caloriesTextField" destination="ytK-Hf-Ze7" id="fxC-7H-BfC"/>
                         <outlet property="cameraButton" destination="yIL-cS-AFU" id="CKM-NM-Nt8"/>
@@ -355,25 +430,26 @@
                         <outlet property="nameTextField" destination="EgY-dd-eq5" id="FaA-dh-w1c"/>
                         <outlet property="saveButton" destination="Pca-8J-ViA" id="aM3-6c-6X2"/>
                         <outlet property="workoutImageView" destination="YyC-nM-yns" id="apV-Nc-po2"/>
+                        <segue destination="F9O-Ih-Lm5" kind="push" identifier="toCameraSegue" id="tFl-h8-Sf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTJ-2h-mrX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3671.0144927536235" y="-332.14285714285711"/>
+            <point key="canvasLocation" x="4581.159420289855" y="-332.14285714285711"/>
         </scene>
         <!--Camera-->
         <scene sceneID="m6j-RY-7Op">
             <objects>
                 <viewController storyboardIdentifier="Camera" title="Camera" modalPresentationStyle="overFullScreen" id="F9O-Ih-Lm5" customClass="CameraViewController" customModule="lynxTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iTx-Yq-WM1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nyg-Ag-gEU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KI6-kK-OcR">
-                                <rect key="frame" x="184" y="807" width="46" height="30"/>
+                                <rect key="frame" x="184" y="753" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -388,6 +464,7 @@
                             <constraint firstItem="KI6-kK-OcR" firstAttribute="centerX" secondItem="Nyg-Ag-gEU" secondAttribute="centerX" id="yZZ-XT-iJW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BpK-of-5Nu"/>
                     <connections>
                         <outlet property="cameraImageView" destination="Nyg-Ag-gEU" id="aJY-PS-zan"/>
                         <outlet property="captureButton" destination="KI6-kK-OcR" id="gXG-gj-mhK"/>
@@ -395,9 +472,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAh-nT-DBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4735" y="-332"/>
+            <point key="canvasLocation" x="5644.9275362318849" y="-332.14285714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iNj-bx-JSD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" id="aSj-Td-yq5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ra5-RY-8FK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JVc-7R-Drc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hhk-RF-Xeh" kind="relationship" relationship="rootViewController" id="Qte-oe-DQE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRJ-Ua-ycV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708.6956521739135" y="79.6875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hG1-U6-eGf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="LynxLogo" width="320" height="183"/>
         <systemColor name="systemBackgroundColor">

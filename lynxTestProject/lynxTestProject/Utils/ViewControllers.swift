@@ -8,9 +8,12 @@
 import Foundation
 
 enum ViewControllers: String {
-    case login = "Login"
-    case register = "Register"
-    case history = "History"
+    case login = "loginToHistory"
+    case register = "registerToHistory"
+    case splash = "splashToHistory"
+    case detail = "toDetailSegue"
     case addWorkout = "AddWorkout"
-    case camera = "Camera"
+    case camera = "toCameraSegue"
+    case splashToLogin = "toLoginSegue"
+    case loginToRegister = "toRegisterSegue"
 }

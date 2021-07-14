@@ -10,18 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HistoryViewController: BaseViewController {
+class HistoryViewController: UIViewController {
     
     @IBOutlet private weak var workoutTableView: UITableView!
     @IBOutlet private weak var addWorkoutButton: UIButton! {
         didSet {
             addWorkoutButton.rx.tap.bind{ [weak self] in
                 guard let self = self else { return }
-                self.presentViewController(with: ViewControllers.addWorkout.rawValue)
+                self.performSegue(withIdentifier: ViewControllers.addWorkout.rawValue, sender: self)
+                
             }.disposed(by: disposeBag)
         }
     }
     private let disposeBag: DisposeBag = DisposeBag()
+    private var selectedWorkout: Workout!
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTableView()
@@ -29,12 +31,28 @@ class HistoryViewController: BaseViewController {
             self.items.accept(workouts)
         })
     }
-    let items = BehaviorRelay<[Workout]>(value: [Workout(name: "Alma", date: Date(timeIntervalSinceNow: 1), burnedCalories: "200", duration: "60", imageURL: "")])
+    let items = BehaviorRelay<[Workout]>(value: [])
     
     private func bindTableView() {
         items.bind(to: self.workoutTableView.rx.items(cellIdentifier: HistoryCell.Constants.cellID, cellType: HistoryCell.self)) { (tv, item, cell) in
             let viewModel = WorkoutCellViewModel(item)
             cell.setup(with: viewModel)
         }.disposed(by: disposeBag)
+        
+        workoutTableView.rx.modelSelected(Workout.self)
+            .subscribe(onNext: { [weak self] tappedWorkout in
+                guard let self = self else { return }
+                self.selectedWorkout = tappedWorkout
+                self.performSegue(withIdentifier: "toDetailSegue", sender: self)
+                // Deselect row
+                if let selectedRowIndexPath = self.workoutTableView.indexPathForSelectedRow {
+                    self.workoutTableView.deselectRow(at: selectedRowIndexPath, animated: true)
+                }
+            }).disposed(by: disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? DetailViewController else { return }
+        controller.model = self.selectedWorkout
     }
 }

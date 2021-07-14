@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: BaseViewController, LoginDelegate {
+class LoginViewController: UIViewController, LoginDelegate {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton! {
@@ -25,7 +25,7 @@ class LoginViewController: BaseViewController, LoginDelegate {
         didSet {
             self.registerButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
-                self.presentViewController(with: ViewControllers.register.rawValue)
+                self.performSegue(withIdentifier: ViewControllers.loginToRegister.rawValue, sender: self)
             }.disposed(by: disposeBag)
         }
     }
@@ -44,7 +44,7 @@ class LoginViewController: BaseViewController, LoginDelegate {
     }
     
     func login() {
-        presentViewController(with: ViewControllers.history.rawValue)
+        performSegue(withIdentifier: ViewControllers.login.rawValue, sender: self)
     }
     
     func signalError(_ error: LoginError) {

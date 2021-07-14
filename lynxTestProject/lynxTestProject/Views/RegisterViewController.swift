@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RegisterViewController: BaseViewController, RegisterDelegate {
+class RegisterViewController: UIViewController, RegisterDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -32,7 +32,7 @@ class RegisterViewController: BaseViewController, RegisterDelegate {
     }
     
     func login() {
-        presentViewController(with: ViewControllers.history.rawValue)
+        performSegue(withIdentifier: ViewControllers.register.rawValue, sender: self)
     }
     
     func signalError(error: RegisterError) {

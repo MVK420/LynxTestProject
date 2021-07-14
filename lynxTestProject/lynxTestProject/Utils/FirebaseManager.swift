@@ -7,10 +7,9 @@
 
 import Foundation
 
-import RxSwift
-import RxRelay
-import RxCocoa
-import Firebase
+import FirebaseFirestore
+import FirebaseCore
+import FirebaseStorage
 
 enum FirebaseSuccess {
     case success
@@ -59,7 +58,7 @@ class FirebaseManager {
             }
         }
     }
-    
+
     func getData(for user: String, completion: @escaping([Workout]) -> Void) {
             Firestore.firestore().collection("Workouts").whereField("userID", isEqualTo: User.uid).getDocuments() { snapshot, err in
                 var result: [Workout] = [Workout]()

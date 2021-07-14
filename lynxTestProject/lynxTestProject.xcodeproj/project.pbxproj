@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B2FC2E5269F130C0077331A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2E4269F130C0077331A /* DetailViewController.swift */; };
+		1B2FC2E7269F1C4F0077331A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2E6269F1C4F0077331A /* DetailViewModel.swift */; };
 		1B88190D269749DE004EE8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88190C269749DE004EE8F1 /* AppDelegate.swift */; };
 		1B88190F269749DE004EE8F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88190E269749DE004EE8F1 /* SceneDelegate.swift */; };
 		1B881911269749DE004EE8F1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881910269749DE004EE8F1 /* SplashViewController.swift */; };
@@ -22,7 +23,6 @@
 		1B88193726984655004EE8F1 /* WorkoutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */; };
 		1B88193926984BDF004EE8F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B88193826984BDF004EE8F1 /* GoogleService-Info.plist */; };
 		1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193B26984E09004EE8F1 /* RegisterManager.swift */; };
-		1B88193E26987676004EE8F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193D26987675004EE8F1 /* BaseViewController.swift */; };
 		1B881940269877B3004EE8F1 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88193F269877B3004EE8F1 /* LoginManager.swift */; };
 		1B8819422698C1DC004EE8F1 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8819412698C1DC004EE8F1 /* ViewControllers.swift */; };
 		1B8819442698C653004EE8F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8819432698C653004EE8F1 /* User.swift */; };
@@ -35,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1B2FC2E4269F130C0077331A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1B2FC2E6269F1C4F0077331A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		1B881909269749DE004EE8F1 /* lynxTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lynxTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B88190C269749DE004EE8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B88190E269749DE004EE8F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellViewModel.swift; sourceTree = "<group>"; };
 		1B88193826984BDF004EE8F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B88193B26984E09004EE8F1 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
-		1B88193D26987675004EE8F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B88193F269877B3004EE8F1 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1B8819412698C1DC004EE8F1 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		1B8819432698C653004EE8F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -104,6 +104,7 @@
 				1B88190C269749DE004EE8F1 /* AppDelegate.swift */,
 				1B88190E269749DE004EE8F1 /* SceneDelegate.swift */,
 				1B881915269749E3004EE8F1 /* Assets.xcassets */,
+				1B881912269749DE004EE8F1 /* Main.storyboard */,
 				1B881917269749E3004EE8F1 /* LaunchScreen.storyboard */,
 				1B88193826984BDF004EE8F1 /* GoogleService-Info.plist */,
 				1B88191A269749E3004EE8F1 /* Info.plist */,
@@ -115,12 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				1BBC57C626999A0D005F0FA2 /* AddWorkoutViewController.swift */,
-				1B88193D26987675004EE8F1 /* BaseViewController.swift */,
 				1BBC57C826999F8E005F0FA2 /* CameraViewController.swift */,
 				1B88193326984387004EE8F1 /* HistoryCell.swift */,
 				1B88192E26983C7D004EE8F1 /* HistoryViewController.swift */,
 				1B88192226974D75004EE8F1 /* LoginViewController.swift */,
-				1B881912269749DE004EE8F1 /* Main.storyboard */,
 				1B88192426974D7E004EE8F1 /* RegisterViewController.swift */,
 				1B881910269749DE004EE8F1 /* SplashViewController.swift */,
 				1B2FC2E4269F130C0077331A /* DetailViewController.swift */,
@@ -140,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1B88193626984655004EE8F1 /* WorkoutCellViewModel.swift */,
+				1B2FC2E6269F1C4F0077331A /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -292,8 +292,8 @@
 				1BBC57CB2699A181005F0FA2 /* FrameExtractor.swift in Sources */,
 				1BBC57C726999A0D005F0FA2 /* AddWorkoutViewController.swift in Sources */,
 				1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */,
+				1B2FC2E7269F1C4F0077331A /* DetailViewModel.swift in Sources */,
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,
-				1B88193E26987676004EE8F1 /* BaseViewController.swift in Sources */,
 				1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */,
 				1B8819422698C1DC004EE8F1 /* ViewControllers.swift in Sources */,
 				1BBC57CD2699B558005F0FA2 /* FirebaseManager.swift in Sources */,

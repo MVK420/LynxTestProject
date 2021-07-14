@@ -7,37 +7,34 @@
 
 import UIKit
 
-class SplashViewController: BaseViewController, LoginDelegate {
+class SplashViewController: UIViewController, LoginDelegate {
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    var nextViewControllerId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        checkIfUserLoggedIn()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.finishedLoading()
+            self.checkIfUserLoggedIn()
         }
     }
     
     private func loadData() { }
-    private func finishedLoading() {
-        let viewControllerID = checkIfUserLoggedIn() ? "Login": "Register"
-        presentViewController(with: viewControllerID)
-    }
     
-    private func checkIfUserLoggedIn() -> Bool {
+    private func checkIfUserLoggedIn() {
         let defaults = UserDefaults.standard
         if let email = defaults.string(forKey: "email"), email != "",
            let password = defaults.string(forKey: "password"), password != "" {
+            nextViewControllerId = ViewControllers.splashToLogin.rawValue
             let loginManager = LoginManager()
             loginManager.delegate = self
             loginManager.login(email: email, password: password)
         }
-        return true
+        nextViewControllerId = ViewControllers.splash.rawValue
     }
     
     func login() {
-        presentViewController(with: ViewControllers.history.rawValue)
+        performSegue(withIdentifier: nextViewControllerId, sender: self)
     }
     
     func signalError(_ error: LoginError) {

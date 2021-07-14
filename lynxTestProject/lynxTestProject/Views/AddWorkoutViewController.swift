@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class AddWorkoutViewController: BaseViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class AddWorkoutViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var caloriesTextField: UITextField!
     @IBOutlet private weak var workoutImageView: UIImageView!
@@ -20,7 +20,7 @@ class AddWorkoutViewController: BaseViewController, UIImagePickerControllerDeleg
         didSet {
             self.cameraButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
-                self.presentViewController(with: ViewControllers.camera.rawValue)
+                self.performSegue(withIdentifier: ViewControllers.camera.rawValue, sender: self)
             }.disposed(by: disposeBag)
         }
     }

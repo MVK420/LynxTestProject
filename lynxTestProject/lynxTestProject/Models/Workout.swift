@@ -14,6 +14,7 @@ struct Workout: Codable {
     let burnedCalories: String
     let duration: String
     let imageURL: String
+    let userID: String = User.uid
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,6 +22,7 @@ struct Workout: Codable {
         case burnedCalories
         case duration
         case imageURL
+        case userID
     }
 }
 

@@ -25,6 +25,9 @@ class HistoryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTableView()
+        FirebaseManager.shared.getData(for: User.uid, completion: { workouts in
+            self.items.accept(workouts)
+        })
     }
     let items = BehaviorRelay<[Workout]>(value: [Workout(name: "Alma", date: Date(timeIntervalSinceNow: 1), burnedCalories: "200", duration: "60", imageURL: "")])
     

@@ -24,8 +24,8 @@ class HistoryCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: Constants.cellID)
     }
     
-    
     func setup(with viewModel: WorkoutCellViewModel) {
         workoutNameLabel.text = viewModel.name
+        workoutImageView.downloaded(from: viewModel.image)
     }
 }

@@ -12,7 +12,7 @@ enum ViewControllers: String {
     case register = "registerToHistory"
     case splash = "splashToHistory"
     case detail = "toDetailSegue"
-    case addWorkout = "AddWorkout"
+    case addWorkout = "toAddSegue"
     case camera = "toCameraSegue"
     case splashToLogin = "toLoginSegue"
     case loginToRegister = "toRegisterSegue"

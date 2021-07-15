@@ -16,7 +16,7 @@ struct DetailViewModel {
     
     init(from model: Workout) {
         name = model.name
-        date = "2020 format this"
+        date = model.date.toString()
         calories = model.burnedCalories
         duration = model.duration
         imageURL = model.imageURL

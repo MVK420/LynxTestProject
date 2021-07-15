@@ -13,11 +13,12 @@ import RxCocoa
 class AddWorkoutViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var caloriesTextField: UITextField!
-    @IBOutlet private weak var workoutImageView: UIImageView!
+    @IBOutlet weak var workoutImageView: UIImageView!
     @IBOutlet private weak var dateOfWorkoutDatePicker: UIDatePicker!
     @IBOutlet private weak var durationTextField: UITextField!
     @IBOutlet private weak var cameraButton: UIButton! {
         didSet {
+            self.cameraButton.setupUI()
             self.cameraButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
                 self.performSegue(withIdentifier: ViewControllers.camera.rawValue, sender: self)
@@ -26,6 +27,7 @@ class AddWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     }
     @IBOutlet private weak var galleryButton: UIButton! {
         didSet {
+            self.galleryButton.setupUI()
             self.galleryButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
                 self.onClickGalleryButton()
@@ -34,6 +36,7 @@ class AddWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     }
     @IBOutlet private weak var saveButton: UIButton! {
         didSet {
+            self.saveButton.setupUI()
             self.saveButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
                 self.save()
@@ -43,18 +46,23 @@ class AddWorkoutViewController: UIViewController, UIImagePickerControllerDelegat
     private var imagePicker = UIImagePickerController()
     private let disposeBag: DisposeBag = DisposeBag()
     
+    override func viewDidLoad() {
+        self.hideKeyboardWhenTappedAround() 
+    }
+    
     private func save() {
         guard let name = nameTextField.text, let calories = caloriesTextField.text,
               let duration = durationTextField.text else { return }
         let date = dateOfWorkoutDatePicker.date
         if let image = workoutImageView.image {
             FirebaseManager.shared.uploadImage(image: image, completion: { url in
-                let workout = Workout(name: name, date: date, burnedCalories: calories, duration: duration, imageURL: url ?? "") // signal error here
+                let workout = Workout(name: name == "" ? Date(timeIntervalSinceNow: 0).toString() : name, date: date, burnedCalories: calories, duration: duration, imageURL: url ?? "") // signal error here
                 let success = FirebaseManager.shared.upload(workout: workout)
                 switch success {
                 case .error(let err):
                     self.signalError(err)
                 default:
+                    self.navigationController?.popViewController(animated: true)
                     return
                 }
             })

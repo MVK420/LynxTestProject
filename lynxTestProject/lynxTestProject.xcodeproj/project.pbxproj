@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B24761026A0173600844B3C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B24760F26A0173600844B3C /* UIButton.swift */; };
 		1B2FC2E5269F130C0077331A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2E4269F130C0077331A /* DetailViewController.swift */; };
 		1B2FC2E7269F1C4F0077331A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2E6269F1C4F0077331A /* DetailViewModel.swift */; };
+		1B2FC2EE26A011EA0077331A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2ED26A011EA0077331A /* UIViewController.swift */; };
+		1B2FC2F026A011F30077331A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2EF26A011F30077331A /* Date.swift */; };
+		1B2FC2F226A012270077331A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2FC2F126A012270077331A /* ImageView.swift */; };
 		1B88190D269749DE004EE8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88190C269749DE004EE8F1 /* AppDelegate.swift */; };
 		1B88190F269749DE004EE8F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B88190E269749DE004EE8F1 /* SceneDelegate.swift */; };
 		1B881911269749DE004EE8F1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881910269749DE004EE8F1 /* SplashViewController.swift */; };
@@ -34,8 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B24760F26A0173600844B3C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		1B2FC2E4269F130C0077331A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1B2FC2E6269F1C4F0077331A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		1B2FC2ED26A011EA0077331A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		1B2FC2EF26A011F30077331A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		1B2FC2F126A012270077331A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1B881909269749DE004EE8F1 /* lynxTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lynxTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B88190C269749DE004EE8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B88190E269749DE004EE8F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2FC2E8269F88010077331A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B2FC2ED26A011EA0077331A /* UIViewController.swift */,
+				1B2FC2EF26A011F30077331A /* Date.swift */,
+				1B2FC2F126A012270077331A /* ImageView.swift */,
+				1B24760F26A0173600844B3C /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1B881900269749DE004EE8F1 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +166,7 @@
 		1B88193A26984DEC004EE8F1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1B2FC2E8269F88010077331A /* Extensions */,
 				1B88193B26984E09004EE8F1 /* RegisterManager.swift */,
 				1B88193F269877B3004EE8F1 /* LoginManager.swift */,
 				1B8819412698C1DC004EE8F1 /* ViewControllers.swift */,
@@ -293,6 +313,7 @@
 				1BBC57C726999A0D005F0FA2 /* AddWorkoutViewController.swift in Sources */,
 				1B88193C26984E09004EE8F1 /* RegisterManager.swift in Sources */,
 				1B2FC2E7269F1C4F0077331A /* DetailViewModel.swift in Sources */,
+				1B2FC2F226A012270077331A /* ImageView.swift in Sources */,
 				1B88192326974D75004EE8F1 /* LoginViewController.swift in Sources */,
 				1B88192526974D7E004EE8F1 /* RegisterViewController.swift in Sources */,
 				1B8819422698C1DC004EE8F1 /* ViewControllers.swift in Sources */,
@@ -302,10 +323,13 @@
 				1B2FC2E5269F130C0077331A /* DetailViewController.swift in Sources */,
 				1B881940269877B3004EE8F1 /* LoginManager.swift in Sources */,
 				1B881911269749DE004EE8F1 /* SplashViewController.swift in Sources */,
+				1B2FC2EE26A011EA0077331A /* UIViewController.swift in Sources */,
+				1B24761026A0173600844B3C /* UIButton.swift in Sources */,
 				1B88193726984655004EE8F1 /* WorkoutCellViewModel.swift in Sources */,
 				1B88192F26983C7E004EE8F1 /* HistoryViewController.swift in Sources */,
 				1B88190D269749DE004EE8F1 /* AppDelegate.swift in Sources */,
 				1BBC57C926999F8E005F0FA2 /* CameraViewController.swift in Sources */,
+				1B2FC2F026A011F30077331A /* Date.swift in Sources */,
 				1B88193426984387004EE8F1 /* HistoryCell.swift in Sources */,
 				1B88190F269749DE004EE8F1 /* SceneDelegate.swift in Sources */,
 			);

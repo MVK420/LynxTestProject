@@ -15,23 +15,26 @@ class HistoryViewController: UIViewController {
     @IBOutlet private weak var workoutTableView: UITableView!
     @IBOutlet private weak var addWorkoutButton: UIButton! {
         didSet {
+            self.addWorkoutButton.setupUI()
             addWorkoutButton.rx.tap.bind{ [weak self] in
                 guard let self = self else { return }
+
                 self.performSegue(withIdentifier: ViewControllers.addWorkout.rawValue, sender: self)
-                
             }.disposed(by: disposeBag)
         }
     }
     private let disposeBag: DisposeBag = DisposeBag()
     private var selectedWorkout: Workout!
+    let items = BehaviorRelay<[Workout]>(value: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTableView()
-        FirebaseManager.shared.getData(for: User.uid, completion: { workouts in
-            self.items.accept(workouts)
-        })
     }
-    let items = BehaviorRelay<[Workout]>(value: [])
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
     
     private func bindTableView() {
         items.bind(to: self.workoutTableView.rx.items(cellIdentifier: HistoryCell.Constants.cellID, cellType: HistoryCell.self)) { (tv, item, cell) in
@@ -49,6 +52,12 @@ class HistoryViewController: UIViewController {
                     self.workoutTableView.deselectRow(at: selectedRowIndexPath, animated: true)
                 }
             }).disposed(by: disposeBag)
+    }
+    
+    private func loadData() {
+            FirebaseManager.shared.getData(for: User.uid, completion: { workouts in
+                self.items.accept(workouts)
+            })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

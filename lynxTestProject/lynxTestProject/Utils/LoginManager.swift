@@ -15,7 +15,7 @@ enum LoginError: String {
 }
 
 protocol LoginDelegate {
-    func login()
+    func login(id: String)
     func signalError(_ error: LoginError)
 }
 
@@ -28,10 +28,7 @@ class LoginManager {
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let auth = authResult {
-                User.uid = auth.user.uid
-            }
-            else if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
+            if let error = error, let errCode = AuthErrorCode(rawValue: error._code) {
                 switch errCode {
                 case .wrongPassword:
                     self.delegate?.signalError(.wrongPassword)
@@ -41,9 +38,12 @@ class LoginManager {
                     return
                 }
             }
-            self.save(email: email, password: password)
-            User.email = email
-            self.delegate?.login()
+            else if let auth = authResult {
+                User.uid = auth.user.uid
+                self.save(email: email, password: password)
+                User.email = email
+                self.delegate?.login(id: auth.user.uid)
+            }
         }
     }
     

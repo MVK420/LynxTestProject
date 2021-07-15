@@ -6,39 +6,52 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
 
 class SplashViewController: UIViewController, LoginDelegate {
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
-    var nextViewControllerId: String!
+    private var nextViewControllerId: String!
+    private let items = BehaviorRelay<[Workout]>(value: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.checkIfUserLoggedIn()
         }
     }
     
-    private func loadData() { }
-    
     private func checkIfUserLoggedIn() {
         let defaults = UserDefaults.standard
         if let email = defaults.string(forKey: "email"), email != "",
            let password = defaults.string(forKey: "password"), password != "" {
-            nextViewControllerId = ViewControllers.splashToLogin.rawValue
+            nextViewControllerId = ViewControllers.splash.rawValue
             let loginManager = LoginManager()
             loginManager.delegate = self
             loginManager.login(email: email, password: password)
+            return
         }
-        nextViewControllerId = ViewControllers.splash.rawValue
+        performSegue(withIdentifier: ViewControllers.splashToLogin.rawValue, sender: self)
     }
     
-    func login() {
-        performSegue(withIdentifier: nextViewControllerId, sender: self)
+    func login(id: String) {
+        loadData(with: id)
     }
     
     func signalError(_ error: LoginError) {
-        return
+        performSegue(withIdentifier: ViewControllers.splashToLogin.rawValue, sender: self)
+    }
+    
+    private func loadData(with id: String) {
+            FirebaseManager.shared.getData(for: id, completion: { workouts in
+                self.items.accept(workouts)
+                self.performSegue(withIdentifier: self.nextViewControllerId, sender: self)
+            })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? HistoryViewController else { return }
+        controller.items.accept(items.value)
     }
 }
 

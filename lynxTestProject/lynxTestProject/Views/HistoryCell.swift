@@ -24,8 +24,14 @@ class HistoryCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: Constants.cellID)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        workoutImageView.image = nil
+    }
+    
     func setup(with viewModel: WorkoutCellViewModel) {
         workoutNameLabel.text = viewModel.name
         workoutImageView.downloaded(from: viewModel.image)
+        workoutDateLabel.text = viewModel.date
     }
 }

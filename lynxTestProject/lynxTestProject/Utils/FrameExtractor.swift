@@ -26,7 +26,7 @@ class FrameExtractor: NSObject {
     private let sessionQueue = DispatchQueue(label: "session queue")
     private let captureSession = AVCaptureSession()
     private let context = CIContext()
-    var videoOrientation: AVCaptureVideoOrientation?
+    // var videoOrientation: AVCaptureVideoOrientation?
     
     weak var delegate: FrameExtractorDelegate?
     
@@ -85,9 +85,7 @@ class FrameExtractor: NSObject {
         guard let connection = videoOutput.connection(with: AVFoundation.AVMediaType.video) else { return }
         guard connection.isVideoOrientationSupported else { return }
         guard connection.isVideoMirroringSupported else { return }
-        if let orientation = videoOrientation {
-            connection.videoOrientation = orientation
-        }
+        connection.videoOrientation = .portrait
         connection.isVideoMirrored = position == .front
     }
     

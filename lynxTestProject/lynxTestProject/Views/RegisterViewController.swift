@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     @IBOutlet weak var termsSwitch: UISwitch!
     @IBOutlet weak var signupButton: UIButton! {
         didSet {
+            self.signupButton.setupUI()
             self.signupButton.rx.tap.bind { [weak self] in
                 guard let self = self else { return }
                 self.onPressedSignupButton()
@@ -28,6 +29,7 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         registerManager.delegate = self
     }
     
